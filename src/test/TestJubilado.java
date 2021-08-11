@@ -29,13 +29,30 @@ public class TestJubilado {
                 
             }
             if(op==4){
-                for(Jubilado jub:jubilados){
+                System.out.println("Los datos con jubulacion patronal son:\n");
+                for (Jubilado jub : jubilados) {
                     jub.calculaPensioni();
                     jub.calcularPension();
-                    if(jub instanceof JubiladoPatron){
+                    if (jub instanceof JubiladoPatron) {
                         ((JubiladoPatron) jub).bonoSueldo();
+                        System.out.println(jub);
+                    } 
+                }
+                System.out.println("Los datos de jubilados por discapacidad son:\n");
+                for (Jubilado jub : jubilados) {
+                    jub.calculaPensioni();
+                    jub.calcularPension();
+                    if (jub instanceof JubiladoDiscapacidad) {
+                        System.out.println(jub);
                     }
-                    System.out.println(jub);
+                }
+                System.out.println("Los datos de jubilados por vejez son:\n");
+                for (Jubilado jub : jubilados) {
+                    jub.calculaPensioni();
+                    jub.calcularPension();
+                    if (jub instanceof JubiladoVejez) {
+                        System.out.println(jub);
+                    }
                 }
             }
         } while (op != 5);
